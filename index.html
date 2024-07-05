@@ -20,12 +20,11 @@
     <link rel="stylesheet" href="./styles/light.css">
   </head>
   <body class="page">
-    <header class="header decorated-zone section">
+    <header class="header decorated-zone">
       <div class="label">
         <p class="label__text">rec</p>
         <div class="label__circle"></div>
       </div>
-      <div class="top-corner"></div>
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
           <li class="header__theme-menu-item">
@@ -52,17 +51,17 @@
           </li>
         </ul>
       </nav>
-      <h1 class="title font-title">No focus</h1>
+      <h1 class="title title-decor">No focus</h1>
       <h3 class="font-heading">
         <p>Что делать, когда не можешь делать ничего </p>
         <p>Или почему нам так сложно
         сконцентрироваться, особенно когда очень надо</p>
       </h3>
-      <div class="bottom-corner"></div>
     </header>
     <main>
-      <section class="section">
+      <section class="section section_why">
         <h2 class="section__heading">Почему сосредоточиться так сложно</h2>
+        <div class="section__board">
         <article class="article">
           <h3 class="font-heading">Многозадачность</h3>
           <p class="article__text">
@@ -89,9 +88,11 @@
             тем больше удовольствия получаешь.
           </p>
         </article>
+      </div>
       </section>
-      <section class="section">
+      <section class="section section_what">
         <h2 class="section__heading">Что снижает концентрацию внимания?</h2>
+        <div class="section__board">
         <article class="article">
           <h3 class="font-heading">Многозадачность</h3>
           <p class="article__text">
@@ -126,16 +127,18 @@
             затем нужно, чтобы вернуться к работе.
           </p>
         </article>
+        </div>
       </section>
-      <section class="section">
+      <section class="section section_how">
         <h2 class="section__heading">
           Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх
           секунд)
         </h2>
-        <h3 class="font-heading">
-          5 простых (на самом деле не очень) советов
-        </h3>
+        <div class="section__board">
         <article class="article">
+          <h3 class="font-heading">
+            5 простых (на самом деле не очень) советов
+          </h3>
           <h3 class="font-heading normal-font">Представьте небо и облака</h3>
           <p class="article__text">
             Или листья в ручье. Тут дело в лёгкой медитации, которая помогает
@@ -186,44 +189,43 @@
             часов и круто тренирует направленное внимание.
           </p>
         </article>
+        </div>
       </section>
-      <section class="section">
+      <section class="section section_images">
         <h3 class="font-heading">
           А можно в картинках?
         </h3>
-        <div class="board">
+        <div class="section__board">
           <img
-            class="image"
+            class="image image_sunset"
             src="./images/sunset.png"
             alt="закат в горах. Картинтка нарисована в стиле простых геометрических фигур. Преобладающие цвета -розовый и лиловый"
           />
           <img
-            class="image"
+            class="image image_ice-cream"
             src="./images/ice-cream.png"
             alt="Изображение в стиле кавай. Желтый тазик, наполненый мороженным, ягодами и кусочками фруктов. Воткнуты коктейльный зонтик и вафельные палочки."
           />
           <img
-            class="image"
+            class="image image_tape"
             src="./images/tape.png"
             alt="По центру крупным планом нарисована пленочная аудио-кассета. Вокруг нарисованы различные значки из ОС Виндоус. Среди них стрелка курсора и песочные часы."
           />
           <img
-            class="image"
+            class="image image_books"
             src="./images/books.png"
             alt="Стопка книг у стены. На них сверху стоит чашка с надпистю по-английски читай больше. Среди книги энциклопеди, словарь, лолита"
           />
           <img
-            class="image"
+            class="image image_street"
             src="./images/street.png"
             alt="посередине удаляющася дорога. По краям дома в японском стиле. Преобладают розовые и голубые тона"
           />
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="top-corner"></div>
-      <p class="footer__text font-title">focus</p>
-      <div class="bottom-corner"></div>
+    <footer class="footer decorated-zone">
+      <p class="footer__text title-decor">focus</p>
     </footer>
     <script src="./scripts/script.js"></script>
   </body>
