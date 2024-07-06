@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 :root {
-  --h-padding:10px;
+  --h-padding: 10px;
 }
 
 .page {
@@ -13,10 +13,18 @@
   line-height: 23.4px;
   text-align: left;
   font-size: 18px;
+  background-color: var(--page-bg-color);
+  background: var(--bg-img) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
   padding: 0 var(--h-padding);
 }
 
-.page:before {
+/*
+.page::before {
   content: "";
   display: block;
   position: fixed;
@@ -25,17 +33,20 @@
   inline-size: 100%;
   block-size: 100%;
   z-index: -10;
+  background-color: var(--page-bg-color);
   background: var(--bg-img) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
 
+}
+*/
 
 .header {
   position: relative;
-  display:grid;
+  display: grid;
+  min-block-size: 668px;
   block-size: 100vh;
   grid-template-columns: 100%;
   grid-template-rows: 1fr min-content 1fr;
@@ -48,47 +59,56 @@
 .decorated-zone::before {
   position: absolute;
   top: var(--h-padding);
-  right:0;
+  right: 0;
   content: " ";
   display: block;
   width: 25px;
   height: 25px;
   border: solid 1px var(--corner-color);
   border-bottom: none;
-  border-left: none; 
+  border-left: none;
 }
 
 .decorated-zone::after {
   position: absolute;
   bottom: var(--h-padding);
-  left:0;
+  left: 0;
   content: " ";
   display: block;
   width: 25px;
   height: 25px;
   border: solid 1px var(--corner-color);
   border-top: none;
-  border-right: none; 
+  border-right: none;
 }
 
 .label {
   display: block;
   position: absolute;
-  top:var(--h-padding);
-  right:0;
+  top: var(--h-padding);
+  right: 27px;
   visibility: var(--vis-dark);
 }
 
 .label__text {
-  display: inline-block;
+  display: block;
+  display: block;
+  position: absolute;
+  top: var(--h-padding);
+  right: 27px;
   width: fit-content;
   text-transform: uppercase;
   line-height: 25px;
-} 
+  visibility: var(--vis-dark);
+}
 
-.label__circle {
-  display: inline-block;
-  width:9px;
+.label__text::after {
+  display: block;
+  position: absolute;
+  top: 9px;
+  right: -27px;
+  content: " ";
+  width: 9px;
   height: 9px;
   background-color: var(--bg-heading-color);
   border: solid 1px var(--accent-color);
@@ -111,38 +131,38 @@
   gap: 11px;
 }
 
-
 .header__theme-menu-button {
-  border:none;
+  border: none;
   background-color: transparent;
-  font-family: "IBM Plex Mono";
+  font-family: "IBM Plex Mono", Arial, Helvetica, sans-serif;
   font-size: 18px;
+  line-height: 18px;
   font-weight: 400;
   color: var(--menu-color);
   line-height: 18px;
   text-align: center;
   text-transform: lowercase;
   width: 70px;
-  height: 26px;
-  vertical-align: middle;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
-  outline: solid 1px var(--accent-color);
+  outline: solid 1px var(--menu-color);
   pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
-  outline: solid 1px var(--accent-color);
+  outline: solid 1px var(--hover-border-color);
 }
 
 .header__theme-menu-button:focus {
-  border-bottom: solid 1px var(--accent-color);
   outline: none;
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: solid 1px var(--accent-color);
+  border-bottom: solid 1px var(--menu-color);
 }
 
 .title {
@@ -151,23 +171,24 @@
   line-height: 95.7px;
 }
 
-
 .title-decor {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-transform: lowercase;
-  color: var(--font-h1-color);
-  text-shadow: 2px 2px var(--accent-color);
+  color: var(--font-main-title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
   block-size: 100%;
 }
 
 .font-heading {
+  font-weight: 700;
   font-size: 18px;
-  color: var(--font-h3-color);
+  line-height: 23.4px;
+  color: var(--font-article-heading-color);
   background-color: var(--bg-heading-color);
   margin-bottom: 10px;
 }
 
-.header h3 {
+.header__text {
   grid-row: 3/4;
   justify-self: end;
   align-self: center;
@@ -178,10 +199,9 @@
   :root {
     --h-padding: 20px;
   }
- 
+
   .header {
     margin-bottom: 60px;
-   
   }
 
   .title {
@@ -192,10 +212,9 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .header h3 {
+  .header__text {
     max-inline-size: 364px;
   }
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -209,12 +228,11 @@
     flex-direction: row;
   }
 
-  .header h3 {
+  .header__text {
     max-inline-size: 491px;
     margin-top: 26px;
   }
 }
-
 
 /* ---- WHY ---- */
 
@@ -247,15 +265,25 @@
   font-weight: 400;
 }
 
+/*
+первая ссылка имеет подчеркивание в мобильной версии в темной теме
+https://disk.yandex.ru/i/mpeGQZkp_Bbtag 
+*/
 
 .link {
   text-shadow: 2px 2px var(--accent-color);
   text-decoration: none;
-  border-bottom: solid  1px var(--accent-color);
+  border-bottom-width: 1px;
+  border-bottom-color: var(--font-color);
+  border-bottom-style: var(--link-border-style);
+}
+
+.link_nodecor {
+  border-bottom: none;
 }
 
 .link:hover {
-  border-bottom: solid  1px var(--accent-color);
+  border-bottom: solid 1px var(--accent-color);
 }
 
 .link:focus {
@@ -274,7 +302,7 @@
   .section:last-child {
     margin-bottom: 60px;
   }
-  
+
   .section_why {
     display: grid;
     grid-template-columns: 236px auto;
@@ -314,7 +342,7 @@
     width: 315px;
   }
 
-  .section_what  .section__board{
+  .section_what .section__board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
@@ -322,15 +350,13 @@
   }
 }
 
-
-
 /* ---- HOW ---- */
 
-.font-heading ~ .article {
-  margin-top: 20px;
+.section__subheading {
+  margin-bottom: 20px;
 }
 
-h3 ~ h3 {
+.font-heading ~ .article {
   margin-top: 20px;
 }
 
@@ -342,16 +368,17 @@ h3 ~ h3 {
   .section_how {
     display: grid;
     grid-template-columns: 236px auto;
-    grid-template-rows: auto;
+    grid-template-rows: min-content auto;
     column-gap: 20px;
   }
 
   .section_how .section__heading {
     grid-column: 1/2;
+    grid-row: 1/2;
   }
 
-  .section_how .article {
-    grid-column-start: 2;
+  .section_how .section__board {
+    grid-column: 2/3;
   }
 }
 
@@ -360,7 +387,6 @@ h3 ~ h3 {
     grid-template-columns: 315px auto;
   }
 }
-
 
 /* ---- PICTURES ---- */
 .image {
@@ -380,10 +406,10 @@ h3 ~ h3 {
 @media screen and (min-width: 768px) {
   .section_images .section__board {
     display: grid;
-    grid-template-areas: 
-    "sunset sunset ice-cream"
-    "tape books ice-cream"
-    "tape street street";
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
     gap: 20px;
@@ -396,7 +422,6 @@ h3 ~ h3 {
     gap: 25px;
   }
 }
-
 
 .image_sunset {
   grid-area: sunset;
@@ -416,14 +441,18 @@ h3 ~ h3 {
 
 .footer {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  min-block-size: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr min-content 1fr;
+  min-block-size: 668px;
+  block-size: 100vh;
 }
 
 .footer__text {
+  display: block;
+  grid-row: 2/3;
   line-height: 95.7px;
+  text-shadow: 2px 2px 0 var(--accent-color);
   align-self: center;
+  justify-self: center;
 }
-
