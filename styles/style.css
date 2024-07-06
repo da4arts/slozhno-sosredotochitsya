@@ -175,7 +175,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-transform: lowercase;
   color: var(--font-main-title-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--shadow-color);
   block-size: 100%;
 }
 
@@ -245,7 +245,7 @@
 }
 
 .section__heading {
-  color: var(--accent-color);
+  color: var(--font-section-heading-color);
   margin-bottom: 20px;
   font-size: 18px;
 }
@@ -265,25 +265,25 @@
   font-weight: 400;
 }
 
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+
 /*
 первая ссылка имеет подчеркивание в мобильной версии в темной теме
 https://disk.yandex.ru/i/mpeGQZkp_Bbtag 
 */
-
-.link {
-  text-shadow: 2px 2px var(--accent-color);
-  text-decoration: none;
+.link_cutsom-underline {
   border-bottom-width: 1px;
   border-bottom-color: var(--font-color);
   border-bottom-style: var(--link-border-style);
 }
 
-.link_nodecor {
-  border-bottom: none;
-}
 
 .link:hover {
-  border-bottom: solid 1px var(--accent-color);
+  border-bottom: solid 1px var(--font-color);
 }
 
 .link:focus {
@@ -291,7 +291,7 @@ https://disk.yandex.ru/i/mpeGQZkp_Bbtag
 }
 
 .link:focus-visible {
-  outline: solid 1px var(--accent-color);
+  outline: solid 1px var(--font-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -318,7 +318,7 @@ https://disk.yandex.ru/i/mpeGQZkp_Bbtag
     grid-column-start: 2;
   }
 
-  .link {
+  .link_cutsom-underline {
     border-bottom: none;
   }
 }
