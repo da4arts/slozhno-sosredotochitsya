@@ -1,5 +1,12 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+/*
+Спасибо за комментраии. Все по делу. Все довольно четко и понятно.
+Улучшил понимание нумирации заголовков.
+Получил понимание приоритетов дизайна отдельных элементов в фигме (UI над основным макетом).
+*/
+
+
 :root {
   --h-padding: 10px;
 }
@@ -13,8 +20,7 @@
   line-height: 23.4px;
   text-align: left;
   font-size: 18px;
-  background-color: var(--page-bg-color);
-  background: var(--bg-img) no-repeat center center;
+  background: var(--page-bg-color) var(--bg-img) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -22,26 +28,6 @@
   background-attachment: fixed;
   padding: 0 var(--h-padding);
 }
-
-/*
-.page::before {
-  content: "";
-  display: block;
-  position: fixed;
-  left: 0;
-  top: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  z-index: -10;
-  background-color: var(--page-bg-color);
-  background: var(--bg-img) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-}
-*/
 
 .header {
   position: relative;
@@ -130,6 +116,18 @@
   width: fit-content;
   gap: 11px;
 }
+
+/*
+Прошу указать численное значение наблюдаемого цвета рамки. Потому, что сейчас я не вижу расхождения в числах ни в коде, ни на странице.
+Согласну макету при наведении рамка должна иметь цвета:
+rgba(50, 49, 45, 0.4) темная тема
+rgba(255, 0, 112, 0.4) светлая тема
+https://disk.yandex.ru/i/cel3khzMhX9kqQ
+
+Цвет рамки определяется переменной --hover-border-color:
+--hover-border-color: rgba(50, 49, 45, 0.4); темная тема
+--hover-border-color: rgba(255, 0, 112, 0.4); светлая тема
+*/
 
 .header__theme-menu-button {
   border: none;
@@ -270,18 +268,6 @@
   text-shadow: 2px 2px 0 var(--shadow-color);
 }
 
-
-/*
-первая ссылка имеет подчеркивание в мобильной версии в темной теме
-https://disk.yandex.ru/i/mpeGQZkp_Bbtag 
-*/
-.link_cutsom-underline {
-  border-bottom-width: 1px;
-  border-bottom-color: var(--font-color);
-  border-bottom-style: var(--link-border-style);
-}
-
-
 .link:hover {
   border-bottom: solid 1px var(--font-color);
 }
@@ -316,10 +302,6 @@ https://disk.yandex.ru/i/mpeGQZkp_Bbtag
 
   .section_why .article {
     grid-column-start: 2;
-  }
-
-  .link_cutsom-underline {
-    border-bottom: none;
   }
 }
 
