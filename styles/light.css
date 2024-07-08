@@ -17,7 +17,7 @@
   --font-color: rgba(53, 52, 48, 1);
   --bg-heading-color:  rgba(255, 141, 203, 1);
   --accent-color: rgba(255, 0, 112, 1);
-  --hover-border-color: rgba(255, 0, 112, 0.4);
+  --hover-border-color: rgba(50, 49, 45, 0.4);
   --corner-color: rgba(53, 52, 48, 1);
   --menu-color: rgba(53, 52, 48, 1);
   --vis-dark: hidden;
@@ -35,7 +35,7 @@
     --font-color: rgba(53, 52, 48, 1);
     --bg-heading-color:  rgba(255, 141, 203, 1);
     --accent-color: rgba(255, 0, 112, 1);
-    --hover-border-color: rgba(255, 0, 112, 0.4);
+    --hover-border-color: rgba(50, 49, 45, 0.4);
     --corner-color: rgba(53, 52, 48, 1);
     --menu-color: rgba(53, 52, 48, 1);
     --vis-dark: hidden;
